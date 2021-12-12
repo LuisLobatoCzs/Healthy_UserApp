@@ -48,10 +48,18 @@ class _StartPageState extends State<StartPage> {
                 onPressed: () {
                   Navigator.pushNamed(context, 'login_page');
                 },
-                child: Container(
-                  margin: const EdgeInsets.only(
-                      right: 35.0, left: 35.0, top: 5.0, bottom: 5.0),
-                  child: Text('Iniciar sesión', style: _estiloTexto),
+                child: const SizedBox(
+                  child: FittedBox(
+                    child: Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: Text(
+                        "Iniciar Sesión",
+                        textAlign: TextAlign.center,
+                        textScaleFactor:
+                            1.7, // Para ajustar el tamaño de letra sin desbordar
+                      ),
+                    ),
+                  ),
                 ),
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all(
@@ -79,10 +87,18 @@ class _StartPageState extends State<StartPage> {
                 onPressed: () {
                   Navigator.pushNamed(context, 'register_page');
                 },
-                child: Container(
-                  margin: const EdgeInsets.only(
-                      right: 35.0, left: 35.0, top: 5.0, bottom: 5.0),
-                  child: Text('Crear cuenta', style: _estiloTexto),
+                child: const SizedBox(
+                  child: FittedBox(
+                    child: Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: Text(
+                        "Crear cuenta",
+                        textAlign: TextAlign.center,
+                        textScaleFactor:
+                            1.7, // Para ajustar el tamaño de letra sin desbordar
+                      ),
+                    ),
+                  ),
                 ),
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all(

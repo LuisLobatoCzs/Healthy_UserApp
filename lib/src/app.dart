@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(context) {
     return MaterialApp(
+      theme: ThemeData(fontFamily: 'Montserrat'),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
