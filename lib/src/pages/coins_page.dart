@@ -50,7 +50,7 @@ class _CoinsPageState extends State<CoinsPage> {
                 children: [
                   SizedBox(
                       height: size.height *
-                          0.05), // Espaciado superior del 5% de la pantalla
+                          0.12), // Espaciado superior del 5% de la pantalla
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
             backgroundColor: Colors.transparent,
             body: Column(
               children: [
-                // Separa el botón del suelo un 10%
+                // Separa el botón del suelo un 3%
                 SizedBox(height: size.height * 0.3),
                 Row(
                   children: [
