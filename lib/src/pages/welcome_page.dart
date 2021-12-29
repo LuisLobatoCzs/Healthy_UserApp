@@ -20,8 +20,64 @@ class _WelcomePageState extends State<WelcomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: map(),
+    final media = MediaQuery.of(context).size;
+    return Stack(
+      children: [
+        Scaffold(
+          extendBodyBehindAppBar: true,
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(media.width * 0.77),
+            child: navHeader(),
+          ),
+          body: map(),
+          bottomNavigationBar: navBarPersonalizado(),
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/logo.png'), fit: BoxFit.cover),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Theme navBarPersonalizado() {
+    return Theme(
+      data: Theme.of(context).copyWith(
+          // sets the background color of the `BottomNavigationBar`
+          canvasColor: const Color(0xff98cdd6),
+          // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+          primaryColor: Colors.red,
+          textTheme: Theme.of(context).textTheme.copyWith(
+              caption: const TextStyle(
+                  color: Colors
+                      .yellow))), // sets the inactive color of the `BottomNavigationBar`
+      child: navigationBar(),
+    );
+  }
+
+  BottomNavigationBar navigationBar() {
+    return BottomNavigationBar(
+      items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Image.asset('assets/promotion.png', width: 50.0, height: 50.0),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset('assets/perfil.png', width: 50.0, height: 50.0),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset('assets/homes.png', width: 50.0, height: 50.0),
+          label: '',
+        ),
+      ],
     );
   }
 
@@ -31,6 +87,53 @@ class _WelcomePageState extends State<WelcomePage> {
       accessToken: secret,
       onMapCreated: _onMapCreated,
       initialCameraPosition: CameraPosition(target: here, zoom: 17),
+    );
+  }
+
+  AppBar navHeader() {
+    return AppBar(
+      backgroundColor: Colors.transparent,
+//    backgroundColor: Color(0x44000000),
+      elevation: 0,
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/up.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/logo.png',
+              fit: BoxFit.fitHeight,
+              height: 95,
+            ),
+            Container(padding: const EdgeInsets.all(8.0), child: Text('')),
+            Row(
+              children: [
+                Image.asset(
+                  'assets/doc.png',
+                  fit: BoxFit.cover,
+                  height: 95,
+                ),
+                Image.asset(
+                  'assets/fisio.png',
+                  fit: BoxFit.cover,
+                  height: 95,
+                ),
+                Image.asset(
+                  'assets/enfermera.png',
+                  fit: BoxFit.cover,
+                  height: 95,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      title: Text(''),
     );
   }
 }
