@@ -112,21 +112,31 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             Container(padding: const EdgeInsets.all(8.0), child: Text('')),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'assets/doc.png',
-                  fit: BoxFit.cover,
-                  height: 95,
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: Image.asset(
+                    'assets/doc.png',
+                    fit: BoxFit.cover,
+                    height: 95,
+                  ),
                 ),
-                Image.asset(
-                  'assets/fisio.png',
-                  fit: BoxFit.cover,
-                  height: 95,
+                Padding(
+                  padding: const EdgeInsets.only(left: 50.0, right: 50.0),
+                  child: Image.asset(
+                    'assets/fisio2.png',
+                    fit: BoxFit.cover,
+                    height: 95,
+                  ),
                 ),
-                Image.asset(
-                  'assets/enfermera.png',
-                  fit: BoxFit.cover,
-                  height: 95,
+                Padding(
+                  padding: const EdgeInsets.only(right: 10.0),
+                  child: Image.asset(
+                    'assets/enfermera.png',
+                    fit: BoxFit.cover,
+                    height: 95,
+                  ),
                 ),
               ],
             ),
