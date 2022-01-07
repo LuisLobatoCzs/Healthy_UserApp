@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Montserrat'),
       debugShowCheckedModeBanner: false,
-      initialRoute: 'welcome_page',
+      initialRoute: 'start_page',
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => StartPage(),
         'register_page': (BuildContext context) => RegisterPage(),

@@ -127,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                                   child: TextButton(
                                     onPressed: () {
                                       Navigator.pushNamed(
-                                          context, 'coins_page');
+                                          context, 'welcome_page');
                                     },
                                     child: Container(
                                       margin: const EdgeInsets.only(
