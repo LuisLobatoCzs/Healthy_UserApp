@@ -30,7 +30,6 @@ class _WelcomePageState extends State<WelcomePage> {
             child: navHeader(),
           ),
           body: map(),
-          bottomNavigationBar: navBarPersonalizado(),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -41,6 +40,12 @@ class _WelcomePageState extends State<WelcomePage> {
                     image: AssetImage('assets/logo.png'), fit: BoxFit.cover),
               ),
             ),
+          ],
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            navBarPersonalizado(),
           ],
         ),
       ],
