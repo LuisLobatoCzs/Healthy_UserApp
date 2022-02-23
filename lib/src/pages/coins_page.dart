@@ -221,7 +221,7 @@ class _CoinsPageState extends State<CoinsPage> {
                           ),
                         ),
                       ),
-                      SizedBox(width: size.width * 0.06)
+                      SizedBox(width: size.width * 0.06),
                     ],
                   ),
                   SizedBox(height: size.height * 0.06),

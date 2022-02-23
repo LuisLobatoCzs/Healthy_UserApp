@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthy/src/widgets/bottom_navigation.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 
 class DocPage extends StatefulWidget {
@@ -37,7 +38,7 @@ class _DocPageState extends State<DocPage> {
           extendBodyBehindAppBar: true,
           appBar: PreferredSize(
             //Tamaño de la barra superior
-            preferredSize: Size.fromHeight(media.width * 0.7),
+            preferredSize: Size.fromHeight(media.width * 0.65),
             child: navHeader(),
           ),
           body: Stack(
@@ -87,74 +88,43 @@ class _DocPageState extends State<DocPage> {
                   SizedBox(height: 70),
                 ],
               ),
-              Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+              Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+                Stack(
                   children: [
-                    SizedBox(
-                      height: 90.0,
-                      width: 90.0,
-                      child: Expanded(
-                        child: IconButton(
-                          icon: Image.asset(
-                            'assets/ambulancia.png',
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 90.0,
+                          width: 90.0,
+                          child: Expanded(
+                            child: IconButton(
+                              icon: Image.asset(
+                                'assets/ambulancia.png',
+                              ),
+                              onPressed: () => {},
+                            ),
                           ),
-                          onPressed: () => {},
                         ),
-                      ),
+                      ],
                     ),
                   ],
                 ),
+                // Espaciador para despegar los botones del BottomNavigation
+                SizedBox(height: 60),
               ]),
             ],
           ),
         ),
-        // BottomNavigation fuera del Scaffold para poder ocultar la leyenda que muestra Mapbox
+        /* 
+          Bottom Navigation Bar
+          |-> Queda fuera del Scaffold para ocultar la leyenda de Mapbox
+        */
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            navBarPersonalizado(),
+            NavigationBar(),
           ],
-        ),
-      ],
-    );
-  }
-
-  // Estilos del BottomNavigation
-  Theme navBarPersonalizado() {
-    return Theme(
-      data: Theme.of(context).copyWith(
-        // Background
-        canvasColor: const Color(0xff98cdd6),
-        // Color del item activo se `Brightness` es light
-        primaryColor: Colors.red,
-        // Estilos de texto
-        textTheme: Theme.of(context).textTheme.copyWith(
-              caption: const TextStyle(color: Colors.yellow),
-            ),
-      ),
-      // BottomNavigation al que se aplica el estilo
-      child: navigationBar(),
-    );
-  }
-
-  BottomNavigationBar navigationBar() {
-    return BottomNavigationBar(
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
-      selectedFontSize: 4,
-      items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/promotion.png', width: 47.0, height: 47.0),
-          label: 'Promociones',
-        ),
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/perfil.png', width: 47.0, height: 47.0),
-          label: 'Perfil',
-        ),
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/homes.png', width: 47.0, height: 47.0),
-          label: 'Inicio',
         ),
       ],
     );
