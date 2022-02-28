@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:healthy/src/widgets/bottom_navigation.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 
-class DocPage extends StatefulWidget {
+class FisioPage extends StatefulWidget {
   @override
-  State<DocPage> createState() => _DocPageState();
+  State<FisioPage> createState() => _FisioPageState();
 }
 
-class _DocPageState extends State<DocPage> {
+class _FisioPageState extends State<FisioPage> {
   MapboxMapController? mapController;
 
   // Posición inicial del mapa
@@ -167,7 +167,7 @@ class _DocPageState extends State<DocPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0),
                   child: Image.asset(
-                    'assets/MedicoGeneral.png', //por el que corresponda
+                    'assets/fisio2.png', //por el que corresponda
                     fit: BoxFit.cover,
                     height: 150,
                   ),

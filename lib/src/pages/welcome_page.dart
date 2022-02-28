@@ -131,7 +131,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           'assets/fisio2.png',
                         ),
                         onPressed: () => {
-                          Navigator.pushNamed(context, 'doc_page'),
+                          Navigator.pushNamed(context, 'fisio_page'),
                         },
                       ),
                     ),
@@ -149,7 +149,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           'assets/enfermera.png',
                         ),
                         onPressed: () => {
-                          Navigator.pushNamed(context, 'doc_page'),
+                          Navigator.pushNamed(context, 'nurse_page'),
                         },
                       ),
                     ),

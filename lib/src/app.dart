@@ -5,6 +5,8 @@ import 'package:healthy/src/pages/login_page.dart';
 import 'package:healthy/src/pages/register_page.dart';
 import 'package:healthy/src/pages/start_page.dart';
 import 'package:healthy/src/pages/welcome_page.dart';
+import 'package:healthy/src/pages/nurse_page.dart';
+import 'package:healthy/src/pages/fisio_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
         'coins_page': (BuildContext context) => CoinsPage(),
         'welcome_page': (BuildContext context) => WelcomePage(),
         'doc_page': (BuildContext context) => DocPage(),
+        'nurse_page': (BuildContext context) => NursePage(),
+        'fisio_page': (BuildContext context) => FisioPage(),
       },
     );
   }
