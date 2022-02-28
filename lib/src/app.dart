@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Montserrat'),
       debugShowCheckedModeBanner: false,
-      initialRoute: 'welcome_page',
+      initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => StartPage(),
         'register_page': (BuildContext context) => RegisterPage(),
