@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:healthy/src/pages/coins_page.dart';
 import 'package:healthy/src/pages/doc_page.dart';
 import 'package:healthy/src/pages/login_page.dart';
+import 'package:healthy/src/pages/profile_page.dart';
 import 'package:healthy/src/pages/register_page.dart';
 import 'package:healthy/src/pages/start_page.dart';
 import 'package:healthy/src/pages/welcome_page.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         'doc_page': (BuildContext context) => DocPage(),
         'nurse_page': (BuildContext context) => NursePage(),
         'fisio_page': (BuildContext context) => FisioPage(),
+        'profile_page': (BuildContext context) => ProfilePage(),
       },
     );
   }

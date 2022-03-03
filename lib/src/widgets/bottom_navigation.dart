@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:healthy/src/pages/doc_page.dart';
-import 'package:healthy/src/pages/login_page.dart';
+import 'package:healthy/src/pages/coins_page.dart';
+import 'package:healthy/src/pages/profile_page.dart';
 import 'package:healthy/src/pages/welcome_page.dart';
 
 class NavigationBar extends StatefulWidget {
@@ -37,7 +37,7 @@ class _NavigationBarState extends State<NavigationBar> {
             Navigator.push(
               context,
               new MaterialPageRoute(
-                builder: (context) => DocPage(),
+                builder: (context) => CoinsPage(),
               ),
             );
             break;
@@ -45,7 +45,7 @@ class _NavigationBarState extends State<NavigationBar> {
             Navigator.push(
               context,
               new MaterialPageRoute(
-                builder: (context) => LoginPage(),
+                builder: (context) => ProfilePage(),
               ),
             );
             break;
