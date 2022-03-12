@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthy/src/widgets/bottom_navigation.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NursePage extends StatefulWidget {
   @override
@@ -24,6 +25,12 @@ class _NursePageState extends State<NursePage> {
     fontWeight: FontWeight.bold,
   );
 
+  final _leyenda = const TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
+
   _onMapCreated(MapboxMapController controller) {
     mapController = controller;
   }
@@ -38,7 +45,7 @@ class _NursePageState extends State<NursePage> {
           extendBodyBehindAppBar: true,
           appBar: PreferredSize(
             //Tamaño de la barra superior
-            preferredSize: Size.fromHeight(media.width * 0.65),
+            preferredSize: Size.fromHeight(media.width * 0.64),
             child: navHeader(),
           ),
           body: Stack(
@@ -100,9 +107,11 @@ class _NursePageState extends State<NursePage> {
                           child: Expanded(
                             child: IconButton(
                               icon: Image.asset(
-                                'assets/ambulancia.png',
+                                'assets/ambulancia3.png',
                               ),
-                              onPressed: () => {},
+                              onPressed: () => {
+                                launch('tel://911'),
+                              },
                             ),
                           ),
                         ),
@@ -164,13 +173,19 @@ class _NursePageState extends State<NursePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0),
-                  child: Image.asset(
-                    'assets/enfermera.png', //por el que corresponda
-                    fit: BoxFit.cover,
-                    height: 150,
-                  ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 5.0),
+                      child: Image.asset(
+                        'assets/enfermera2.png', //por el que corresponda
+                        fit: BoxFit.cover,
+                        height: 105,
+                      ),
+                    ),
+                    Text('Enfermería', style: _leyenda),
+                  ],
                 ),
               ],
             ),

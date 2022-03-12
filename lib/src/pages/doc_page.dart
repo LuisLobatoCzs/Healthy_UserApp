@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthy/src/widgets/bottom_navigation.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DocPage extends StatefulWidget {
   @override
@@ -38,7 +39,7 @@ class _DocPageState extends State<DocPage> {
           extendBodyBehindAppBar: true,
           appBar: PreferredSize(
             //Tamaño de la barra superior
-            preferredSize: Size.fromHeight(media.width * 0.65),
+            preferredSize: Size.fromHeight(media.width * 0.64),
             child: navHeader(),
           ),
           body: Stack(
@@ -100,9 +101,11 @@ class _DocPageState extends State<DocPage> {
                           child: Expanded(
                             child: IconButton(
                               icon: Image.asset(
-                                'assets/ambulancia.png',
+                                'assets/ambulancia3.png',
                               ),
-                              onPressed: () => {},
+                              onPressed: () => {
+                                launch('tel://911'),
+                              },
                             ),
                           ),
                         ),
@@ -169,7 +172,7 @@ class _DocPageState extends State<DocPage> {
                   child: Image.asset(
                     'assets/MedicoGeneral.png', //por el que corresponda
                     fit: BoxFit.cover,
-                    height: 150,
+                    height: 140,
                   ),
                 ),
               ],

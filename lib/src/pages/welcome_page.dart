@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:healthy/src/widgets/bottom_navigation.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WelcomePage extends StatefulWidget {
   @override
@@ -17,6 +18,18 @@ class _WelcomePageState extends State<WelcomePage> {
   // Token privado
   final secret =
       'sk.eyJ1IjoibHVpc2xvYmF0byIsImEiOiJja3hhczl5c3Iwc2loMzBwZng0NW1sOTZ5In0.Ff4iMP7HdlTqY0Ao7etHRQ';
+
+  // Definición de estilo para botón central
+  final _botones = const TextStyle(
+    fontSize: 19,
+    fontWeight: FontWeight.bold,
+  );
+
+  final _leyenda = const TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
 
   _onMapCreated(MapboxMapController controller) {
     mapController = controller;
@@ -42,10 +55,41 @@ class _WelcomePageState extends State<WelcomePage> {
           extendBodyBehindAppBar: true,
           appBar: PreferredSize(
             // Altura del banner
-            preferredSize: Size.fromHeight(media.width * 0.65),
+            preferredSize: Size.fromHeight(media.width * 0.64),
             child: navHeader(),
           ),
-          body: map(),
+          body: Stack(
+            children: [
+              map(),
+              Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+                Stack(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 90.0,
+                          width: 90.0,
+                          child: Expanded(
+                            child: IconButton(
+                              icon: Image.asset(
+                                'assets/ambulancia3.png',
+                              ),
+                              onPressed: () => {
+                                launch('tel://911'),
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                // Espaciador para despegar los botones del BottomNavigation
+                SizedBox(height: 60),
+              ]),
+            ],
+          ),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
