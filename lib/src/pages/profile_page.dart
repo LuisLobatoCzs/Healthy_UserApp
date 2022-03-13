@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -289,269 +290,336 @@ class _ProfilePageState extends State<ProfilePage> {
                               SizedBox(height: size.width * 0.02),
                               /* *************** Opciones *************** */
                               // Healthy coins
-                              Container(
-                                color: const Color(0x99ffffff),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    // 20% Imagen
-                                    Expanded(
-                                      flex: 2,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(children: [
-                                          Image.asset(
-                                            'assets/menu_coins.png',
-                                            fit: BoxFit.cover,
-                                            height: _iconSize,
-                                          ),
-                                        ]),
+                              RaisedButton(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                padding: const EdgeInsets.all(0),
+                                onPressed: () => {
+                                  launch('https://healthy.com/healthy-coins'),
+                                },
+                                child: Container(
+                                  color: const Color(0x99ffffff),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      // 20% Imagen
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(children: [
+                                            Image.asset(
+                                              'assets/menu_coins.png',
+                                              fit: BoxFit.cover,
+                                              height: _iconSize,
+                                            ),
+                                          ]),
+                                        ),
                                       ),
-                                    ),
-                                    // 80% Leyenda
-                                    Expanded(
-                                      flex: 8,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("Healthy Coins",
-                                            style: _texto),
+                                      // 80% Leyenda
+                                      Expanded(
+                                        flex: 8,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("Healthy Coins",
+                                              style: _texto),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               // Espaciado vertical
                               SizedBox(height: size.width * 0.02),
                               // Direcciones
-                              Container(
-                                color: const Color(0x99ffffff),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    // 20% Imagen
-                                    Expanded(
-                                      flex: 2,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(children: [
-                                          Image.asset(
-                                            'assets/menu_direcciones.png',
-                                            fit: BoxFit.cover,
-                                            height: _iconSize,
-                                          ),
-                                        ]),
+                              RaisedButton(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                padding: const EdgeInsets.all(0),
+                                onPressed: () => {
+                                  launch('https://healthy.com/direcciones'),
+                                },
+                                child: Container(
+                                  color: const Color(0x99ffffff),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      // 20% Imagen
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(children: [
+                                            Image.asset(
+                                              'assets/menu_direcciones.png',
+                                              fit: BoxFit.cover,
+                                              height: _iconSize,
+                                            ),
+                                          ]),
+                                        ),
                                       ),
-                                    ),
-                                    // 80% Leyenda
-                                    Expanded(
-                                      flex: 8,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child:
-                                            Text("Direcciones", style: _texto),
+                                      // 80% Leyenda
+                                      Expanded(
+                                        flex: 8,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("Direcciones",
+                                              style: _texto),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               // Espaciado vertical
                               SizedBox(height: size.width * 0.02),
                               // Tarjeta
-                              Container(
-                                color: const Color(0x99ffffff),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    // 20% Imagen
-                                    Expanded(
-                                      flex: 2,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(children: [
-                                          Image.asset(
-                                            'assets/menu_tarjeta.png',
-                                            fit: BoxFit.cover,
-                                            height: _iconSize,
-                                          ),
-                                        ]),
+                              RaisedButton(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                padding: const EdgeInsets.all(0),
+                                onPressed: () => {
+                                  launch('https://healthy.com/tarjeta'),
+                                },
+                                child: Container(
+                                  color: const Color(0x99ffffff),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      // 20% Imagen
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(children: [
+                                            Image.asset(
+                                              'assets/menu_tarjeta.png',
+                                              fit: BoxFit.cover,
+                                              height: _iconSize,
+                                            ),
+                                          ]),
+                                        ),
                                       ),
-                                    ),
-                                    // 80% Leyenda
-                                    Expanded(
-                                      flex: 8,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("Tarjeta", style: _texto),
+                                      // 80% Leyenda
+                                      Expanded(
+                                        flex: 8,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("Tarjeta", style: _texto),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               // Espaciado vertical
                               SizedBox(height: size.width * 0.02),
                               // Cuenta
-                              Container(
-                                color: const Color(0x99ffffff),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    // 20% Imagen
-                                    Expanded(
-                                      flex: 2,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(children: [
-                                          Image.asset(
-                                            'assets/menu_cuenta.png',
-                                            fit: BoxFit.cover,
-                                            height: _iconSize,
-                                          ),
-                                        ]),
+                              RaisedButton(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                padding: const EdgeInsets.all(0),
+                                onPressed: () => {
+                                  launch('https://healthy.com/cuenta'),
+                                },
+                                child: Container(
+                                  color: const Color(0x99ffffff),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      // 20% Imagen
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(children: [
+                                            Image.asset(
+                                              'assets/menu_cuenta.png',
+                                              fit: BoxFit.cover,
+                                              height: _iconSize,
+                                            ),
+                                          ]),
+                                        ),
                                       ),
-                                    ),
-                                    // 80% Leyenda
-                                    Expanded(
-                                      flex: 8,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("Cuenta", style: _texto),
+                                      // 80% Leyenda
+                                      Expanded(
+                                        flex: 8,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("Cuenta", style: _texto),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               // Espaciado vertical
                               SizedBox(height: size.width * 0.02),
                               // Favoritos
-                              Container(
-                                color: const Color(0x99ffffff),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    // 20% Imagen
-                                    Expanded(
-                                      flex: 2,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(children: [
-                                          Image.asset(
-                                            'assets/menu_favoritos.png',
-                                            fit: BoxFit.cover,
-                                            height: _iconSize,
-                                          ),
-                                        ]),
+                              RaisedButton(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                padding: const EdgeInsets.all(0),
+                                onPressed: () => {
+                                  launch('https://healthy.com/favoritos'),
+                                },
+                                child: Container(
+                                  color: const Color(0x99ffffff),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      // 20% Imagen
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(children: [
+                                            Image.asset(
+                                              'assets/menu_favoritos.png',
+                                              fit: BoxFit.cover,
+                                              height: _iconSize,
+                                            ),
+                                          ]),
+                                        ),
                                       ),
-                                    ),
-                                    // 80% Leyenda
-                                    Expanded(
-                                      flex: 8,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("Favoritos", style: _texto),
+                                      // 80% Leyenda
+                                      Expanded(
+                                        flex: 8,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child:
+                                              Text("Favoritos", style: _texto),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               // Espaciado vertical
                               SizedBox(height: size.width * 0.02),
                               // Registro de consultas
-                              Container(
-                                color: const Color(0x99ffffff),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    // 20% Imagen
-                                    Expanded(
-                                      flex: 2,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(children: [
-                                          Image.asset(
-                                            'assets/menu_registro.png',
-                                            fit: BoxFit.cover,
-                                            height: _iconSize,
-                                          ),
-                                        ]),
+                              RaisedButton(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                padding: const EdgeInsets.all(0),
+                                onPressed: () => {
+                                  launch(
+                                      'https://healthy.com/historial-consultas'),
+                                },
+                                child: Container(
+                                  color: const Color(0x99ffffff),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      // 20% Imagen
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(children: [
+                                            Image.asset(
+                                              'assets/menu_registro.png',
+                                              fit: BoxFit.cover,
+                                              height: _iconSize,
+                                            ),
+                                          ]),
+                                        ),
                                       ),
-                                    ),
-                                    // 80% Leyenda
-                                    Expanded(
-                                      flex: 8,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("Registro de consultas",
-                                            style: _texto),
+                                      // 80% Leyenda
+                                      Expanded(
+                                        flex: 8,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("Registro de consultas",
+                                              style: _texto),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               // Espaciado vertical
                               SizedBox(height: size.width * 0.02),
                               // Centro de ayuda
-                              Container(
-                                color: const Color(0x99ffffff),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    // 20% Imagen
-                                    Expanded(
-                                      flex: 2,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(children: [
-                                          Image.asset(
-                                            'assets/menu_ayuda.png',
-                                            fit: BoxFit.cover,
-                                            height: _iconSize,
-                                          ),
-                                        ]),
+                              RaisedButton(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                padding: const EdgeInsets.all(0),
+                                onPressed: () => {
+                                  launch('https://healthy.com/Ayuda'),
+                                },
+                                child: Container(
+                                  color: const Color(0x99ffffff),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      // 20% Imagen
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(children: [
+                                            Image.asset(
+                                              'assets/menu_ayuda.png',
+                                              fit: BoxFit.cover,
+                                              height: _iconSize,
+                                            ),
+                                          ]),
+                                        ),
                                       ),
-                                    ),
-                                    // 80% Leyenda
-                                    Expanded(
-                                      flex: 8,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("Ayuda", style: _texto),
+                                      // 80% Leyenda
+                                      Expanded(
+                                        flex: 8,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("Ayuda", style: _texto),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               // Espaciado vertical
                               SizedBox(height: size.width * 0.02),
                               // Términos y condiciones
-                              Container(
-                                color: const Color(0x99ffffff),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    // 20% Imagen
-                                    Expanded(
-                                      flex: 2,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(children: [
-                                          Image.asset(
-                                            'assets/menu_info.png',
-                                            fit: BoxFit.cover,
-                                            height: _iconSize,
-                                          ),
-                                        ]),
+                              RaisedButton(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                padding: const EdgeInsets.all(0),
+                                onPressed: () => {
+                                  launch(
+                                      'https://healthy.com/Terminos-y-condiciones'),
+                                },
+                                child: Container(
+                                  color: const Color(0x99ffffff),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      // 20% Imagen
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(children: [
+                                            Image.asset(
+                                              'assets/menu_info.png',
+                                              fit: BoxFit.cover,
+                                              height: _iconSize,
+                                            ),
+                                          ]),
+                                        ),
                                       ),
-                                    ),
-                                    // 80% Leyenda
-                                    Expanded(
-                                      flex: 8,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("Términos y condiciones",
-                                            style: _texto),
+                                      // 80% Leyenda
+                                      Expanded(
+                                        flex: 8,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text("Términos y condiciones",
+                                              style: _texto),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
