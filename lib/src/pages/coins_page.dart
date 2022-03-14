@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:healthy/src/widgets/bottom_navigation.dart';
+import 'package:healthy/src/widgets/bottom_navigation.dart' as bnb;
 
 class CoinsPage extends StatefulWidget {
   const CoinsPage({Key? key}) : super(key: key);
@@ -10,22 +10,11 @@ class CoinsPage extends StatefulWidget {
 }
 
 class _CoinsPageState extends State<CoinsPage> {
-  final _titulo = const TextStyle(
-    fontSize: 50,
-    color: Colors.white,
-  );
-  final _leyenda = const TextStyle(
-    fontSize: 15,
-    color: Colors.white,
-  );
   final _texto = const TextStyle(
     fontSize: 30,
     color: Color(0xff415B7A),
-  );
-  final _texto2 = const TextStyle(
-    fontSize: 30,
-    color: Color(0xff8ABBC7),
-    fontWeight: FontWeight.w600,
+    //color: Color(0xff8ABBC7),
+    //fontWeight: FontWeight.w600,
   );
   final _botones = const TextStyle(
     fontSize: 23,
@@ -38,7 +27,7 @@ class _CoinsPageState extends State<CoinsPage> {
       children: [
         Scaffold(
           // Color de fondo
-          backgroundColor: Color(0xffe7f0f8),
+          backgroundColor: const Color(0xffe7f0f8),
           // Habilita la transparencia en el Appbar
           extendBodyBehindAppBar: true,
           appBar: PreferredSize(
@@ -141,7 +130,7 @@ class _CoinsPageState extends State<CoinsPage> {
                               'HEALTHYCODE',
                               style: TextStyle(
                                 fontSize: size.width * 0.065,
-                                color: Color(0xff8ABBC7),
+                                color: const Color(0xff8ABBC7),
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -224,6 +213,7 @@ class _CoinsPageState extends State<CoinsPage> {
                     Expanded(
                       child: TextButton(
                         onPressed: () {
+                          // ignore: avoid_print
                           print('Iniciar sesión');
                         },
                         child: Container(
@@ -240,7 +230,7 @@ class _CoinsPageState extends State<CoinsPage> {
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
                           backgroundColor: MaterialStateProperty.all<Color>(
-                            Color(0xff415B7A),
+                            const Color(0xff415B7A),
                           ),
                         ),
                       ),
@@ -254,7 +244,7 @@ class _CoinsPageState extends State<CoinsPage> {
               ],
             ),
           ),
-          bottomNavigationBar: NavigationBar(),
+          bottomNavigationBar: bnb.NavigationBar(),
         ),
       ],
     );
@@ -313,7 +303,7 @@ class _CoinsPageState extends State<CoinsPage> {
         ),
       ),
       // Título del banner
-      title: Text(''),
+      title: const Text(''),
     );
   }
 }

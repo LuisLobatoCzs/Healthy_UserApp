@@ -26,6 +26,9 @@ class _NavigationBarState extends State<NavigationBar> {
         gradient: degradado(),
       ),
       child: BottomNavigationBar(
+        // Aquí está la p*t/ sombra que estorbaba
+        elevation: 0.0,
+        // Ahí arriba
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedFontSize: 4,
@@ -82,13 +85,9 @@ class _NavigationBarState extends State<NavigationBar> {
       data: ThemeData(
         // Background color
         canvasColor: Colors.transparent,
-        //canvasColor: const Color(0xff98cdd6),
-
-        // Color del item activo se `Brightness` es light
-        primaryColor: Colors.red,
 
         // Color de sombreado
-        shadowColor: Colors.transparent,
+        //shadowColor: Colors.transparent,
 
         // Estilos de texto
         textTheme: Theme.of(context).textTheme.copyWith(

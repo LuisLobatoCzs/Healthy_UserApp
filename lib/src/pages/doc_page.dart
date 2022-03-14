@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:healthy/src/widgets/bottom_navigation.dart';
+import 'package:healthy/src/widgets/bottom_navigation.dart' as bnb;
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DocPage extends StatefulWidget {
+  const DocPage({Key? key}) : super(key: key);
+
   @override
   State<DocPage> createState() => _DocPageState();
 }
@@ -12,7 +14,7 @@ class _DocPageState extends State<DocPage> {
   MapboxMapController? mapController;
 
   // Posición inicial del mapa
-  final here = LatLng(18.991412, -98.201622);
+  final here = const LatLng(18.991412, -98.201622);
   // Url del mapa de Mapbox
   final styleMap = 'mapbox://styles/luislobato/ckxax6pem0cg514qphmlky3pe';
   // Token Mapbox
@@ -86,7 +88,7 @@ class _DocPageState extends State<DocPage> {
                     ],
                   ),
                   // Espaciador para despegar los botones del BottomNavigation
-                  SizedBox(height: 70),
+                  const SizedBox(height: 70),
                 ],
               ),
               Column(mainAxisAlignment: MainAxisAlignment.end, children: [
@@ -114,7 +116,7 @@ class _DocPageState extends State<DocPage> {
                   ],
                 ),
                 // Espaciador para despegar los botones del BottomNavigation
-                SizedBox(height: 60),
+                const SizedBox(height: 60),
               ]),
             ],
           ),
@@ -126,7 +128,7 @@ class _DocPageState extends State<DocPage> {
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            NavigationBar(),
+            bnb.NavigationBar(),
           ],
         ),
       ],
@@ -163,7 +165,8 @@ class _DocPageState extends State<DocPage> {
               fit: BoxFit.fitHeight,
               height: 60,
             ),
-            Container(padding: const EdgeInsets.all(8.0), child: Text('')),
+            Container(
+                padding: const EdgeInsets.all(8.0), child: const Text('')),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -180,7 +183,7 @@ class _DocPageState extends State<DocPage> {
           ],
         ),
       ),
-      title: Text(''),
+      title: const Text(''),
     );
   }
 }

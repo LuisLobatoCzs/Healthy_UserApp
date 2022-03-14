@@ -8,18 +8,6 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final _titulos = const TextStyle(
-    fontSize: 30,
-    color: Color(0xff415B7A),
-  );
-  final _etiquetas = const TextStyle(
-    fontSize: 20,
-    color: Color(0xff415B7A),
-  );
-  final _leyendas = const TextStyle(
-    fontSize: 15,
-    color: Color(0xff415B7A),
-  );
   final _botones = const TextStyle(
     fontSize: 23,
   );

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
-import 'package:healthy/src/widgets/bottom_navigation.dart';
+import 'package:healthy/src/widgets/bottom_navigation.dart' as bnb;
 import 'package:url_launcher/url_launcher.dart';
+import 'package:location/location.dart';
 
 class WelcomePage extends StatefulWidget {
   @override
@@ -12,27 +13,62 @@ class _WelcomePageState extends State<WelcomePage> {
   MapboxMapController? mapController;
 
   // Ubicación a mostrar en el mapa
-  final here = LatLng(18.991412, -98.201622);
+  final here = const LatLng(18.991412, -98.201622);
   // Url a los estilos del mapa
   final styleMap = 'mapbox://styles/luislobato/ckxax6pem0cg514qphmlky3pe';
   // Token privado
   final secret =
       'sk.eyJ1IjoibHVpc2xvYmF0byIsImEiOiJja3hhczl5c3Iwc2loMzBwZng0NW1sOTZ5In0.Ff4iMP7HdlTqY0Ao7etHRQ';
 
-  // Definición de estilo para botón central
-  final _botones = const TextStyle(
-    fontSize: 19,
-    fontWeight: FontWeight.bold,
-  );
+  Future<LatLng> acquireCurrentLocation() async {
+    Location location = Location();
 
-  final _leyenda = const TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.bold,
-    color: Colors.white,
-  );
+    bool serviceEnabled;
 
-  _onMapCreated(MapboxMapController controller) {
+    PermissionStatus permissionGranted;
+
+    serviceEnabled = await location.serviceEnabled();
+    if (!serviceEnabled) {
+      serviceEnabled = await location.requestService();
+      if (!serviceEnabled) {
+        return const LatLng(0.0, 0.0);
+      }
+    }
+
+    permissionGranted = await location.hasPermission();
+    if (permissionGranted == PermissionStatus.denied) {
+      permissionGranted = await location.requestPermission();
+      if (permissionGranted != PermissionStatus.granted) {
+        return const LatLng(0.0, 0.0);
+      }
+    }
+
+    // Gets the current location of the user
+    final locationData = await location.getLocation();
+    return LatLng(locationData.latitude!, locationData.longitude!);
+  }
+
+  _onMapCreated(MapboxMapController controller) async {
     mapController = controller;
+    final result = await acquireCurrentLocation();
+    print("*****************************************");
+    print(result.latitude);
+    print(result.longitude);
+    print("*****************************************");
+    await controller.animateCamera(
+      CameraUpdate.newLatLng(result),
+    );
+
+    // Indicador de la ubicación actual
+    await controller.addCircle(
+      CircleOptions(
+        circleRadius: 12.0,
+        circleColor: '#415B7A',
+        circleOpacity: 1.0,
+        geometry: result,
+        draggable: false,
+      ),
+    );
   }
 
   // Instancia del mapa
@@ -109,7 +145,7 @@ class _WelcomePageState extends State<WelcomePage> {
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            NavigationBar(),
+            bnb.NavigationBar(),
           ],
         ),
       ],

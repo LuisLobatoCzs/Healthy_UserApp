@@ -19,15 +19,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) => StartPage(),
-        'register_page': (BuildContext context) => RegisterPage(),
-        'login_page': (BuildContext context) => LoginPage(),
-        'coins_page': (BuildContext context) => CoinsPage(),
+        '/': (BuildContext context) => const StartPage(),
+        'register_page': (BuildContext context) => const RegisterPage(),
+        'login_page': (BuildContext context) => const LoginPage(),
+        'coins_page': (BuildContext context) => const CoinsPage(),
         'welcome_page': (BuildContext context) => WelcomePage(),
-        'doc_page': (BuildContext context) => DocPage(),
+        'doc_page': (BuildContext context) => const DocPage(),
         'nurse_page': (BuildContext context) => NursePage(),
         'fisio_page': (BuildContext context) => FisioPage(),
-        'profile_page': (BuildContext context) => ProfilePage(),
+        'profile_page': (BuildContext context) => const ProfilePage(),
       },
     );
   }

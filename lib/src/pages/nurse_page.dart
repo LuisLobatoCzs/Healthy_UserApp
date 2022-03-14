@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:healthy/src/widgets/bottom_navigation.dart';
+import 'package:healthy/src/widgets/bottom_navigation.dart' as bnb;
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -132,7 +132,7 @@ class _NursePageState extends State<NursePage> {
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            NavigationBar(),
+            bnb.NavigationBar(),
           ],
         ),
       ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -35,9 +34,6 @@ class _ProfilePageState extends State<ProfilePage> {
     fontSize: 15,
     color: Color(0xff415B7A),
     fontWeight: FontWeight.w600,
-  );
-  final _botones = const TextStyle(
-    fontSize: 23,
   );
 
   Gradient degradado() {
