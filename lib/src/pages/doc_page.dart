@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthy/src/widgets/bottom_navigation.dart' as bnb;
+import 'package:healthy/src/widgets/emergency_button.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -41,7 +42,7 @@ class _DocPageState extends State<DocPage> {
           extendBodyBehindAppBar: true,
           appBar: PreferredSize(
             //Tamaño de la barra superior
-            preferredSize: Size.fromHeight(media.width * 0.64),
+            preferredSize: Size.fromHeight(media.width * 0.47),
             child: navHeader(),
           ),
           body: Stack(
@@ -68,7 +69,7 @@ class _DocPageState extends State<DocPage> {
                                   left: 50.0,
                                   top: 0.0,
                                   bottom: 0.0),
-                              child: Text('Pedir ya!', style: _botones),
+                              child: Text('Pedir ya', style: _botones),
                             ),
                             style: ButtonStyle(
                               shape: MaterialStateProperty.all(
@@ -91,33 +92,7 @@ class _DocPageState extends State<DocPage> {
                   const SizedBox(height: 70),
                 ],
               ),
-              Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-                Stack(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 90.0,
-                          width: 90.0,
-                          child: Expanded(
-                            child: IconButton(
-                              icon: Image.asset(
-                                'assets/ambulancia3.png',
-                              ),
-                              onPressed: () => {
-                                launch('tel://911'),
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                // Espaciador para despegar los botones del BottomNavigation
-                const SizedBox(height: 60),
-              ]),
+              EmergencyButton(),
             ],
           ),
         ),
@@ -152,6 +127,10 @@ class _DocPageState extends State<DocPage> {
       elevation: 0,
       flexibleSpace: Container(
         decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.elliptical(250, 50),
+            bottomRight: Radius.elliptical(250, 50),
+          ),
           image: DecorationImage(
             image: AssetImage('assets/up.png'),
             fit: BoxFit.cover,
@@ -163,7 +142,7 @@ class _DocPageState extends State<DocPage> {
             Image.asset(
               'assets/logo.png',
               fit: BoxFit.fitHeight,
-              height: 60,
+              height: 50,
             ),
             Container(
                 padding: const EdgeInsets.all(8.0), child: const Text('')),
@@ -175,7 +154,7 @@ class _DocPageState extends State<DocPage> {
                   child: Image.asset(
                     'assets/MedicoGeneral.png', //por el que corresponda
                     fit: BoxFit.cover,
-                    height: 140,
+                    height: 100,
                   ),
                 ),
               ],

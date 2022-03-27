@@ -35,15 +35,15 @@ class _NavigationBarState extends State<NavigationBar> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon:
-                Image.asset('assets/promotion.png', width: 47.0, height: 47.0),
+                Image.asset('assets/promotion.png', width: 37.0, height: 37.0),
             label: 'Promociones',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset('assets/perfil.png', width: 47.0, height: 47.0),
+            icon: Image.asset('assets/perfil.png', width: 37.0, height: 37.0),
             label: 'Perfil',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset('assets/homes.png', width: 47.0, height: 47.0),
+            icon: Image.asset('assets/homes.png', width: 37.0, height: 37.0),
             label: 'Inicio',
           ),
         ],

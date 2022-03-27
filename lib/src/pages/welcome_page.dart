@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:healthy/src/widgets/emergency_button.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:healthy/src/widgets/bottom_navigation.dart' as bnb;
-import 'package:url_launcher/url_launcher.dart';
 import 'package:location/location.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -91,39 +91,13 @@ class _WelcomePageState extends State<WelcomePage> {
           extendBodyBehindAppBar: true,
           appBar: PreferredSize(
             // Altura del banner
-            preferredSize: Size.fromHeight(media.width * 0.64),
+            preferredSize: Size.fromHeight(media.width * 0.47),
             child: navHeader(),
           ),
           body: Stack(
             children: [
               map(),
-              Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-                Stack(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 90.0,
-                          width: 90.0,
-                          child: Expanded(
-                            child: IconButton(
-                              icon: Image.asset(
-                                'assets/ambulancia3.png',
-                              ),
-                              onPressed: () => {
-                                launch('tel://911'),
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                // Espaciador para despegar los botones del BottomNavigation
-                SizedBox(height: 60),
-              ]),
+              EmergencyButton(),
             ],
           ),
         ),
@@ -154,13 +128,16 @@ class _WelcomePageState extends State<WelcomePage> {
 
   AppBar navHeader() {
     return AppBar(
-      backgroundColor: Colors.transparent,
-//      backgroundColor: const Color(0x00000000),
+      backgroundColor: const Color(0x00000000),
       // Sombreado del banner
       elevation: 0,
       flexibleSpace: Container(
         // Background banner
         decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.elliptical(250, 50),
+            bottomRight: Radius.elliptical(250, 50),
+          ),
           image: DecorationImage(
             image: AssetImage('assets/up.png'),
             fit: BoxFit.cover,
@@ -173,38 +150,34 @@ class _WelcomePageState extends State<WelcomePage> {
             Image.asset(
               'assets/logo.png',
               fit: BoxFit.fitHeight,
-              height: 95,
+              height: 80,
             ),
             // Espaciado entre el logo y los botones
-            Container(padding: const EdgeInsets.all(8.0), child: Text('')),
-            // Botones de servicio
+            SizedBox(height: 5), // Botones de servicio
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Médico
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0),
-                  child: SizedBox(
-                    height: 95.0,
-                    width: 95.0,
-                    child: Expanded(
-                      child: IconButton(
-                        icon: Image.asset(
-                          'assets/doc.png',
-                        ),
-                        onPressed: () => {
-                          Navigator.pushNamed(context, 'doc_page'),
-                        },
+                SizedBox(
+                  height: 100.0,
+                  width: 100.0,
+                  child: Expanded(
+                    child: IconButton(
+                      icon: Image.asset(
+                        'assets/doc.png',
                       ),
+                      onPressed: () => {
+                        Navigator.pushNamed(context, 'doc_page'),
+                      },
                     ),
                   ),
                 ),
                 // Fisioterapia
                 Padding(
-                  padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+                  padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                   child: SizedBox(
-                    height: 95.0,
-                    width: 95.0,
+                    height: 100.0,
+                    width: 100.0,
                     child: Expanded(
                       child: IconButton(
                         icon: Image.asset(
@@ -218,20 +191,17 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                 ),
                 // Enfermería
-                Padding(
-                  padding: const EdgeInsets.only(right: 10.0),
-                  child: SizedBox(
-                    height: 95.0,
-                    width: 95.0,
-                    child: Expanded(
-                      child: IconButton(
-                        icon: Image.asset(
-                          'assets/enfermera.png',
-                        ),
-                        onPressed: () => {
-                          Navigator.pushNamed(context, 'nurse_page'),
-                        },
+                SizedBox(
+                  height: 100.0,
+                  width: 100.0,
+                  child: Expanded(
+                    child: IconButton(
+                      icon: Image.asset(
+                        'assets/enfermera.png',
                       ),
+                      onPressed: () => {
+                        Navigator.pushNamed(context, 'nurse_page'),
+                      },
                     ),
                   ),
                 ),
