@@ -265,8 +265,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       SizedBox(height: size.width * 0.07),
                       // Menu
                       Container(
+                        // Redondeado
                         decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(35),
                           gradient: degradado(),
+                          border: Border.all(
+                            color: Colors.white,
+                          ),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
@@ -278,7 +283,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Text("Mi cuenta", style: _titulo2),
+                                    Text("  Mi cuenta", style: _titulo2),
                                   ],
                                 ),
                               ),
@@ -291,7 +296,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 elevation: 0,
                                 padding: const EdgeInsets.all(0),
                                 onPressed: () => {
-                                  launch('https://healthy.com/healthy-coins'),
+                                  Navigator.pushNamed(context, 'coins_page'),
                                 },
                                 child: Container(
                                   color: const Color(0x99ffffff),
@@ -579,15 +584,29 @@ class _ProfilePageState extends State<ProfilePage> {
                               SizedBox(height: size.width * 0.02),
                               // Términos y condiciones
                               RaisedButton(
-                                color: Colors.transparent,
+                                color: const Color(0x99ffffff),
                                 elevation: 0,
+                                // Redondeado
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20),
+                                  ),
+                                ),
                                 padding: const EdgeInsets.all(0),
                                 onPressed: () => {
                                   launch(
                                       'https://healthy.com/Terminos-y-condiciones'),
                                 },
                                 child: Container(
-                                  color: const Color(0x99ffffff),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0x99ffffff),
+                                    borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20),
+                                    ),
+                                    gradient: degradado(),
+                                  ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -635,10 +654,15 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Cerrar sesión",
-                  style: _titulo2Subrayado,
-                ),
+                TextButton(
+                  onPressed: () => {
+                    Navigator.pushNamed(context, '/'),
+                  },
+                  child: Text(
+                    "Cerrar sesión",
+                    style: _titulo2Subrayado,
+                  ),
+                )
               ],
             ),
           ),
